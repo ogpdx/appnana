@@ -45,6 +45,9 @@ import ConsultasAnterioresTEC from './src/pages/TEC/ConsultasAnterioresTEC';
 import TelaHistoricoTEC from './src/pages/TEC/TelaHistoricoTEC';
 import TelaEncerramentoSimples from './src/pages/ACS/TelaEncerramentoSimples';
 import TelaEncerramentoTEC from './src/pages/TEC/TelaEncerramentoTEC';
+import HubENF from './src/pages/ENF/HubENF';
+import PerfilENF from './src/pages/ENF/PerfilENF';
+import SplashSucessoENF from './src/pages/SplashSucessoENF';
 
 
 Icon.loadFont();
@@ -109,6 +112,10 @@ export default function App() {
           <Stack.Screen name="TelaHistoricoTEC" component={TelaHistoricoTEC} />
           <Stack.Screen name="TelaEncerramentoSimples" component={TelaEncerramentoSimples} />
           <Stack.Screen name="TelaEncerramentoTEC" component={TelaEncerramentoTEC} />
+          <Stack.Screen name="SplashSucessoENF" component={SplashSucessoENF} />
+          <Stack.Screen name="HubENF" component={HubENF} />
+          <Stack.Screen name="PerfilENF" component={PerfilENF} />
+          
          
         </Stack.Navigator>
       </NavigationContainer>

@@ -46,7 +46,7 @@ export default function LoginEnfermeiro({ navigation }) {
     }
 
     try {
-      const response = await fetch('http://10.0.2.2/api/login.php', {
+      const response = await fetch('https://voxforge.com.br/api/login.php', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
@@ -57,15 +57,16 @@ export default function LoginEnfermeiro({ navigation }) {
       const json = await response.json();
       if (json.status === 'ok') {
         Alert.alert('Bem-vindo', `Olá, ${json.nome}!`);
-        // navigation.navigate('ProximaTela');
-      } else {
-        Alert.alert('Erro', json.mensagem || 'CPF ou senha inválidos.');
-      }
-    } catch (error) {
-      Alert.alert('Erro', 'Não foi possível conectar com o servidor.');
-      console.error(error);
-    }
-  };
+        navigation.reset({ index: 0, routes: [{ name: 'SplashSucessoENF', params: { nome: json.nome } }] });
+              } else {
+                Alert.alert(t('erro'), json.mensagem || t('cpf_senha_invalidos'));
+              }
+            } catch (e) {
+              Alert.alert(t('erro'), t('erro_conexao'));
+            } finally {
+              setLoading(false);
+            }
+          };
 
   return (
     <View style={{ flex: 1, backgroundColor: 'rgb(241, 241, 241)' }}>
@@ -189,5 +190,5 @@ const styles = StyleSheet.create({
     color: '#2BB3A3',
     fontWeight: 'bold',
     marginTop: -2,
-  },
+  },
 });
