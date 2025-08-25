@@ -90,17 +90,7 @@ export default function HubENF({ navigation }) {
         <View style={styles.menu}>
           <TouchableOpacity style={styles.botaoMenu} onPress={() => navigation.navigate('TelaSupervisaoENF')}>
             <Text style={styles.emoji}>📝</Text>
-            <Text style={styles.botaoTexto}>{t('nova_avaliacao')}</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity style={styles.botaoMenu} onPress={() => navigation.navigate('ConsultasAnterioresENF')}>
-            <Text style={styles.emoji}>📋</Text>
-            <Text style={styles.botaoTexto}>{t('minhas_avaliacoes')}</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity style={styles.botaoMenu} onPress={() => navigation.navigate('PerfilENF')}>
-            <Text style={styles.emoji}>👤</Text>
-            <Text style={styles.botaoTexto}>{t('meu_perfil')}</Text>
+            <Text style={styles.botaoTexto}>{t('avaliar_pe')}</Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.botaoMenu} onPress={() => navigation.navigate('')}>
@@ -118,6 +108,22 @@ export default function HubENF({ navigation }) {
             <Text style={styles.botaoTexto}>{t('cartilha_autocuidado')}</Text>
           </TouchableOpacity>
 
+          <TouchableOpacity style={styles.botaoMenu} onPress={() => navigation.navigate('ConsultasAnterioresENF')}>
+            <Text style={styles.emoji}>📋</Text>
+            <Text style={styles.botaoTexto}>{t('ulcera')}</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.botaoMenu} onPress={() => navigation.navigate('')}>
+            <Text style={styles.emoji}>🧮</Text>
+            <Text style={styles.botaoTexto}>{t('calcular_itb')}</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.botaoMenu} onPress={() => navigation.navigate('PerfilENF')}>
+            <Text style={styles.emoji}>👤</Text>
+            <Text style={styles.botaoTexto}>{t('meu_perfil')}</Text>
+          </TouchableOpacity>
+
+        
           <TouchableOpacity style={[styles.botaoSaida, { backgroundColor: '#fff' }]} onPress={confirmarSaida} disabled={saindo}>
             {saindo ? (
               <ActivityIndicator size="small" color="#2BB3A3" />

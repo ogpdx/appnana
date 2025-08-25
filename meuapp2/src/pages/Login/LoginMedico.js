@@ -46,7 +46,7 @@ export default function LoginMedico({ navigation }) {
     }
 
     try {
-      const response = await fetch('http://10.0.2.2/api/login.php', {
+      const response = await fetch('https://voxforge.com.br/api/login.php', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
@@ -56,8 +56,8 @@ export default function LoginMedico({ navigation }) {
 
       const json = await response.json();
       if (json.status === 'ok') {
-        Alert.alert('Bem-vindo', `Olá, ${json.nome}!`);
-        // navigation.navigate('ProximaTela');
+        Alert.alert('Bem-vindo', `Olá, Dr ${json.nome}!`);
+        navigation.reset({ index: 0, routes: [{ name: 'SplashSucessoMED', params: { nome: json.nome } }] });
       } else {
         Alert.alert('Erro', json.mensagem || 'CPF ou senha inválidos.');
       }
