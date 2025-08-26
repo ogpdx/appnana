@@ -11,6 +11,10 @@ import {
     Modal,
 } from 'react-native'
 
+export default function TextoExpandivel() {
+    const [expandido, setExpandido] = useState(false)
+}
+
 export default function SisUsar({ navigation }) {
 
     const [modalSINDAB, setModalSINDAB] = useState(false)
@@ -56,6 +60,55 @@ export default function SisUsar({ navigation }) {
                 <View style={styles.modalContainer}>
                     <Text style={styles.modalTitle}>SINDAB</Text>
                     <Image source={require('../../img/sindab.jpg')}></Image>
+                    <View style={styles.info1}>
+                        <TouchableOpacity onPress={() => setExpandido(!expandido)}>
+                        <Text style={styles.titulo}>
+                         {expandido ? "▼ Interpretação da Pontuação" : "► Interpretação da Pontuação"}
+                        </Text>
+                        </TouchableOpacity>
+
+                        {expandido && (
+                            <Text style={styles.texto}>
+                            Pontuação menor que 3: Associada com taxa de cicatrização de 60% em 12 semanas e risco de amputação maior em 6 meses de 0,7% Pontuação maior ou igual a 3: Taxa de cicatrização de 35% em 12 semanas e risco de amputação maior de 2,7%
+                            Condutas Segundo as Pontuações
+                            Embora o IWGDF não estabeleça protocolos rígidos de conduta baseados apenas no SINBAD, a literatura sugere as seguintes abordagens:
+                            SINBAD 0-2 (Baixo Risco)
+                            Prognóstico: Melhor taxa de cicatrização
+                            Condutas sugeridas:
+                            Acompanhamento ambulatorial regular
+                            Desbridamento quando necessário
+                            Curativos apropriados
+                            Descarga adequada (offloading)
+                            Controle glicêmico otimizado
+                            Educação do paciente
+                            SINBAD 3-4 (Risco Moderado)
+                            Prognóstico: Taxa de cicatrização intermediária
+                            Condutas intensificadas:
+                            Avaliação multidisciplinar urgente
+                            Considerar antibioticoterapia se infecção presente
+                            Avaliação vascular detalhada se isquemia presente
+                            Possível necessidade de hospitalização
+                            Monitoramento mais frequente
+                            Avaliar necessidade de intervenções especializadas
+                            SINBAD 5-6 (Alto Risco)
+                            Prognóstico: Maior risco de eventos adversos maiores no pé 
+                            Condutas prioritárias:
+                            Encaminhamento imediato para centro especializado
+                            Hospitalização frequentemente necessária
+                            Avaliação vascular urgente com possível revascularização
+                            Antibioticoterapia agressiva se infecção
+                            Considerar terapias avançadas
+                            Preparar paciente/família para possibilidade de amputação
+                            Acompanhamento multidisciplinar intensivo
+                            Uso do SINBAD na Prática Clínica
+                            Triagem e Comunicação: O IWGDF recomenda o uso do sistema SINBAD para comunicação entre profissionais de saúde sobre as características da úlcera
+                            Documentação: É fundamental registrar tanto o escore total quanto os componentes individuais, pois cada elemento direciona intervenções específicas:
+                            Isquemia (I=1): Necessita avaliação vascular
+                            Infecção (B=1): Requer antibioticoterapia
+                            Profundidade (D=1): Pode indicar osteomielite
+                            </Text>
+                        )}
+                    </View>
                     <TouchableOpacity style={styles.modalButton} onPress={() => setModalSINDAB(false)}>
                         <Text style={styles.modalButtonText}>Voltar</Text>
                     </TouchableOpacity>
@@ -75,7 +128,65 @@ export default function SisUsar({ navigation }) {
             {/* Modal IDSA */}
             <Modal visible={modalIDSA} animationType="slide">
                 <View style={styles.modalContainer}>
-                    <Text style={styles.modalTitle}>Conteúdo do IDSA/IWGDF</Text>
+                    <Text style={styles.modalTitle}>IDSA/IWGDF</Text>
+                    <Image source={require('../../img/ulcerain.jpg')}></Image>
+                    <TouchableOpacity onPress={() => setExpandido(!expandido)}>
+                        <Text style={styles.titulo}>
+                         {expandido ? "▼ Condutas Segundo as Classificações" : "► Condutas Segundo as Classificações"}
+                        </Text>
+                        </TouchableOpacity>
+                        {expandido && (
+                            <Text style={styles.texto}>
+                            Grau 1 - Não Infectada
+                            Local de tratamento: Ambulatorial
+                            Condutas:
+                            Não requer antibióticos
+                            Desbridamento do tecido necrótico
+                            Curativos apropriados
+                            Descarga adequada
+                            Controle glicêmico
+                            Reavaliação regular
+                            Grau 2 - Infecção Leve
+                            Local de tratamento: Geralmente ambulatorial
+                            Antibioticoterapia:
+                            Via oral na maioria dos casos
+                            Cobertura para cocos Gram-positivos (S. aureus, Streptococcus)
+                            Duração: 1-2 semanas
+                            Opções: cefalexina, amoxicilina-clavulanato, clindamicina
+                            Outras condutas:
+                            Desbridamento local
+                            Curativos diários
+                            Repouso e elevação do membro
+                            Monitoramento próximo da resposta
+                            Grau 3 - Infecção Moderada
+                            Local de tratamento: É RECOMENDADA a internação hospitalar para todas as pessoas com infecções graves e moderadas, ou associadas a comorbidades relevantes
+                            Antibioticoterapia:
+                            Inicialmente parenteral, pode transicionar para oral
+                            Cobertura ampla (Gram-positivos, Gram-negativos, anaeróbios)
+                            Duração: 2-4 semanas
+                            Considerar MRSA se prevalência local alta
+                            Condutas adicionais:
+                            Desbridamento cirúrgico pode ser necessário
+                            Avaliação vascular
+                            Investigar osteomielite
+                            Controle glicêmico rigoroso
+                            Suporte nutricional
+                            Grau 4 - Infecção Grave
+                            Local de tratamento: Hospitalização obrigatória, possivelmente UTI
+                            Antibioticoterapia:
+                            Via parenteral de amplo espectro
+                            Cobertura para patógenos multirresistentes
+                            Ajustar conforme cultura e antibiograma
+                            Duração prolongada (3-6 semanas ou mais)
+                            Condutas emergenciais:
+                            Estabilização hemodinâmica
+                            Desbridamento cirúrgico urgente
+                            Considerar amputação de urgência se necessário
+                            Suporte intensivo
+                            Consulta com infectologia
+                            Avaliação vascular urgente    
+                            </Text>
+                        )}
                     <TouchableOpacity style={styles.modalButton} onPress={() => setModalIDSA(false)}>
                         <Text style={styles.modalButtonText}>Voltar</Text>
                     </TouchableOpacity>
@@ -144,6 +255,19 @@ const styles = StyleSheet.create({
         backgroundColor: '#007BFF',
         padding: 12,
         borderRadius: 8,
+    },
+    info1: {
+        padding: 16,
+    },
+    titulo: {
+        fontsize: 18,
+        fontWeight: "bold",
+        color: "#007AFF",
+    },
+    texto: {
+        marginTop: 8,
+        fontSize: 16,
+        color: "#333",
     },
     modalButtonText: {
         color: '#fff',
