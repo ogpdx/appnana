@@ -49,7 +49,7 @@ export default function Ulcera({ navigation }) {
 
         <TouchableOpacity
           style={[styles.button, styles.nextButton]}
-          onPress={() => navigation.navigate('ProximaTelaENF')} // troque pelo próximo destino
+          onPress={() => navigation.navigate('SisUsarENF')}
         >
           <Text style={styles.buttonText}>Avançar</Text>
         </TouchableOpacity>
