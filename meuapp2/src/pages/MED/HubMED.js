@@ -88,9 +88,9 @@ export default function HubMED({ navigation }) {
         </View>
 
         <View style={styles.menu}>
-          <TouchableOpacity style={styles.botaoMenu} onPress={() => navigation.navigate('TelaSupervisaoENF')}>
+          <TouchableOpacity style={styles.botaoMenu} onPress={() => navigation.navigate('')}>
             <Text style={styles.emoji}>📝</Text>
-            <Text style={styles.botaoTexto}>{t('Avaliar Paciente')}</Text>
+            <Text style={styles.botaoTexto}>{t('Avaliar')}</Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.botaoMenu} onPress={() => navigation.navigate('')}>

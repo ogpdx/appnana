@@ -98,19 +98,14 @@ export default function HubENF({ navigation }) {
             <Text style={styles.botaoTexto}>{t('videos_instrucionais')}</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.botaoMenu} onPress={() => navigation.navigate('')}>
+          <TouchableOpacity style={styles.botaoMenu} onPress={() => navigation.navigate('Ulcera')}>
             <Text style={styles.emoji}>📚</Text>
-            <Text style={styles.botaoTexto}>{t('Diretrizes IWGDF')}</Text>
+            <Text style={styles.botaoTexto}>{t('diretrizes_iwgdf')}</Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.botaoMenu} onPress={() => navigation.navigate('')}>
             <Text style={styles.emoji}>📖</Text>
             <Text style={styles.botaoTexto}>{t('cartilha_autocuidado')}</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity style={styles.botaoMenu} onPress={() => navigation.navigate('Ulcera')}>
-            <Text style={styles.emoji}>📋</Text>
-            <Text style={styles.botaoTexto}>{t('Informações sobre úlcera')}</Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.botaoMenu} onPress={() => navigation.navigate('')}>
