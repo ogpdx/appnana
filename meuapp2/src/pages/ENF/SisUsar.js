@@ -9,25 +9,27 @@ import {
     TouchableOpacity,
     ScrollView,
     Modal,
+    Dimensions,
 } from 'react-native'
-
-export default function TextoExpandivel() {
-    const [expandido, setExpandido] = useState(false)
-}
 
 export default function SisUsar({ navigation }) {
 
     const [modalSINDAB, setModalSINDAB] = useState(false)
     const [modalWIFI, setModalWIFI] = useState(false)
     const [modalIDSA, setModalIDSA] = useState(false)
+    const [expandido, setExpandido] = useState(false)
+    const screenWidth = Dimensions.get('window').width;
+    const [imgFullScreen, setImgFullScreen] = useState(false)
 
     return (
         <View style={styles.container}>
             <ScrollView contentContainerStyle={styles.scroll}>
 
                 {/* Duas enfermeiras com balão */}
-                <Image source={require('../../img/duasenf.jpg')} style={styles.headerImage} />
-                <Text style={styles.title}>Escolha o sistema que você deseja usar nesse momento</Text>
+                <Image source={require('../../img/duasenf.png')} style={styles.headerImage} />
+                <Text style={styles.title}>Escolha o{'\n'}
+                    sistema que{'\n'}
+                    você deseja usar{'\n'}nesse momento</Text>
 
                 {/* Texto principal */}
                 <View style={styles.classificacoes}>
@@ -59,7 +61,14 @@ export default function SisUsar({ navigation }) {
             <Modal visible={modalSINDAB} animationType="slide">
                 <View style={styles.modalContainer}>
                     <Text style={styles.modalTitle}>SINDAB</Text>
-                    <Image source={require('../../img/sindab.jpg')}></Image>
+                    <ScrollView style={{ width: '100%' }}>
+                    <Image source={require('../../img/sindab.jpg')} style={{ 
+                        width: screenWidth * 0.9,
+                        height: undefined,
+                        aspectRatio: 1.5,
+                        resizeMode: 'contain',
+                        margimBottom: 10, 
+                        }}></Image>
                     <View style={styles.info1}>
                         <TouchableOpacity onPress={() => setExpandido(!expandido)}>
                         <Text style={styles.titulo}>
@@ -109,6 +118,7 @@ export default function SisUsar({ navigation }) {
                             </Text>
                         )}
                     </View>
+                </ScrollView>
                     <TouchableOpacity style={styles.modalButton} onPress={() => setModalSINDAB(false)}>
                         <Text style={styles.modalButtonText}>Voltar</Text>
                     </TouchableOpacity>
@@ -118,7 +128,68 @@ export default function SisUsar({ navigation }) {
             {/* Modal WIFI */}
             <Modal visible={modalWIFI} animationType="slide">
                 <View style={styles.modalContainer}>
-                    <Text style={styles.modalTitle}>Conteúdo do WIFI</Text>
+                    <Text style={styles.modalTitle}>Wlfl</Text>
+                    <ScrollView style={{ width: '100%' }}>
+                    <Image source={require('../../img/wifi2.jpg')} style={{
+                        width: screenWidth * 0.9,
+                        height: undefined,
+                        aspectRatio: 1.5,
+                        resizeMode: 'contain',
+                        margimBottom: 10,
+                    }}></Image>
+                    <Image source={require('../../img/wifi.jpg')} style={{
+                        width: screenWidth * 0.9,
+                        height: undefined,
+                        aspectRatio: 1.5,
+                        resizeMode: 'contain',
+                        margimBottom: 10,
+                    }}></Image>
+                    <TouchableOpacity onPress={() => setExpandido(!expandido)}>
+                        <Text style={styles.titulo}>
+                         {expandido ? "▼ Condutas Segundo o Estadiamento Wlfl" : "► Condutas Segundo o Estadiamento Wlfl"}
+                        </Text>
+                        </TouchableOpacity>
+                        {expandido && (
+                            <Text style={styles.texto}>
+                            Estágio 1 - Risco Muito Baixo
+                            Características: Geralmente W0-1, I0-1, fI0-1
+                            Condutas:
+                            Tratamento conservador ambulatorial
+                            Cuidados locais da ferida
+                            Controle de infecção se presente
+                            Otimização do controle glicêmico
+                            Descarga adequada
+                            Baixa probabilidade de necessitar revascularização
+                            Estágio 2 - Risco Baixo
+                            Características: Combinações moderadas dos componentes
+                            Condutas:
+                            Avaliação multidisciplinar
+                            Considerar estudo vascular não invasivo
+                            Possível benefício de revascularização se isquemia significativa
+                            Antibioticoterapia se infecção presente
+                            Monitoramento mais frequente
+                            Estágio 3 - Risco Moderado
+                            Características: Pelo menos um componente grave
+                            Condutas:
+                            Avaliação vascular urgente com provável benefício de revascularização
+                            Hospitalização frequentemente necessária
+                            Antibioticoterapia agressiva se infecção
+                            Desbridamento cirúrgico se necessário
+                            Considerar terapias adjuvantes
+                            Acompanhamento multidisciplinar intensivo
+                            Estágio 4 - Risco Alto
+                            Características: Múltiplos componentes graves (W3, I3, fI3)
+                            Condutas:
+                            Alto risco de amputação maior, requerendo intervenção urgente
+                            Revascularização urgente se tecnicamente viável
+                            Hospitalização mandatória
+                            Antibioticoterapia parenteral de amplo espectro
+                            Considerar amputação primária se revascularização não viável
+                            Discussão sobre prognóstico com paciente/família
+                            Cuidados paliativos se apropriado
+                            </Text>
+                        )}
+                    </ScrollView>
                     <TouchableOpacity style={styles.modalButton} onPress={() => setModalWIFI(false)}>
                         <Text style={styles.modalButtonText}>Voltar</Text>
                     </TouchableOpacity>
@@ -129,7 +200,14 @@ export default function SisUsar({ navigation }) {
             <Modal visible={modalIDSA} animationType="slide">
                 <View style={styles.modalContainer}>
                     <Text style={styles.modalTitle}>IDSA/IWGDF</Text>
-                    <Image source={require('../../img/ulcerain.jpg')}></Image>
+                    <ScrollView style={{ width: '100%' }}>
+                    <Image source={require('../../img/ulcerain.jpg')}  style={{ 
+                        width: screenWidth * 0.9,
+                        height: undefined,
+                        aspectRatio: 1.5,
+                        resizeMode: 'contain',
+                        margimBottom: 10, 
+                        }}></Image>
                     <TouchableOpacity onPress={() => setExpandido(!expandido)}>
                         <Text style={styles.titulo}>
                          {expandido ? "▼ Condutas Segundo as Classificações" : "► Condutas Segundo as Classificações"}
@@ -187,15 +265,16 @@ export default function SisUsar({ navigation }) {
                             Avaliação vascular urgente    
                             </Text>
                         )}
+                    </ScrollView>
                     <TouchableOpacity style={styles.modalButton} onPress={() => setModalIDSA(false)}>
                         <Text style={styles.modalButtonText}>Voltar</Text>
                     </TouchableOpacity>
                 </View>
             </Modal>
-
         </View>
     )
 }
+
 
 const styles = StyleSheet.create({
     container: {
@@ -207,15 +286,18 @@ const styles = StyleSheet.create({
     },
     headerImage: {
         width: '100%',
-        height: 150,
+        height: 170,
         resizeMode: 'contain',
         marginBottom: 10,
     },
     title: {
-        textAlign: 'center',
-        fontSize: 16,
-        fontWeight: 'bold',
-        marginBottom: 15,
+        position: 'absolute',
+        top: 50,
+        right: 50,
+        width: 185,
+        fontSize: 13,
+        textAlign: 'justify',
+        fontWeight: '600',
     },
     classificacoes: {
         marginBottom: 20,
@@ -229,7 +311,7 @@ const styles = StyleSheet.create({
         gap: 10,
     },
     button: {
-        backgroundColor: '#007BFF',
+        backgroundColor: '#5bb5b0',
         padding: 12,
         borderRadius: 8,
         marginBottom: 10,
@@ -252,7 +334,7 @@ const styles = StyleSheet.create({
     },
     modalButton: {
         marginTop: 20,
-        backgroundColor: '#007BFF',
+        backgroundColor: '#5bb5b0',
         padding: 12,
         borderRadius: 8,
     },
@@ -262,7 +344,7 @@ const styles = StyleSheet.create({
     titulo: {
         fontsize: 18,
         fontWeight: "bold",
-        color: "#007AFF",
+        color: "#5bb5b0",
     },
     texto: {
         marginTop: 8,

@@ -6,36 +6,29 @@ export default function Ulcera({ navigation }) {
   return (
     <View style={styles.container}>
       <ScrollView contentContainerStyle={styles.scroll}>
-        {/* Título */}
-        <Text style={styles.title}>Como classificar uma úlcera?</Text>
-
-        {/* Primeira parte */}
-        <View style={styles.section}>
+        
+        {/* Topo: Enfermeira + título */}
+        <View style={styles.header}>
           <Image source={require('../../img/enfdedopcima.jpg')} style={styles.nurseTop} />
+          <Text style={styles.title}>Como classificar uma úlcera?</Text>
         </View>
 
-        {/* Balão 1 */}
-        <View style={styles.row}>
+        {/* Enfermeira direita com balão */}
+        <View style={styles.rowRight}>
           <Image source={require('../../img/esfdirt.jpg')} style={styles.nurseRight} />
-          <View style={styles.bubble}>
-            <Text style={styles.bubbleText}>
-              O primeiro passo na abordagem da úlcera do pé é classificá-la com base nos seis
-              critérios do sistema SINBAD. Esses itens orientam o tratamento e padronizam a
-              comunicação entre profissionais de saúde sobre as características da lesão.
-            </Text>
-          </View>
+          <Text style={styles.bubbleTextRight}>
+            O primeiro passo na abordagem da úlcera do pé é classificá-la com base nos seis critérios do sistema SINBAD. Esses itens orientam o tratamento e padronizam a comunicação entre profissionais de saúde sobre as características da lesão.
+          </Text>
         </View>
 
-        {/* Balão 2 */}
-        <View style={styles.row}>
+        {/* Enfermeira esquerda com balão */}
+        <View style={styles.rowLeft}>
           <Image source={require('../../img/enfesqrd.jpg')} style={styles.nurseLeft} />
-          <View style={styles.bubble}>
-            <Text style={styles.bubbleText}>
-              Para avaliar a gravidade da infecção siga os critérios do IWGDF/IDSA, enquanto a
-              isquemia é analisada pelo sistema WIfI.
-            </Text>
-          </View>
+          <Text style={styles.bubbleTextLeft}>
+            Para avaliar a gravidade da infecção siga os critérios do IWGDF/IDSA, enquanto a isquemia é analisada pelo sistema WIfI.
+          </Text>
         </View>
+
       </ScrollView>
 
       {/* Rodapé com botões */}
@@ -49,7 +42,7 @@ export default function Ulcera({ navigation }) {
 
         <TouchableOpacity
           style={[styles.button, styles.nextButton]}
-          onPress={() => navigation.navigate('SisUsarENF')}
+          onPress={() => navigation.navigate('SisUsar')}
         >
           <Text style={styles.buttonText}>Avançar</Text>
         </TouchableOpacity>
@@ -60,28 +53,40 @@ export default function Ulcera({ navigation }) {
 
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: '#fff' },
-  scroll: { padding: 20 },
-  title: { fontSize: 20, fontWeight: 'bold', textAlign: 'center', marginBottom: 20 },
-  section: { alignItems: 'center', marginBottom: 10 },
-  nurseTop: { width: 100, height: 100, resizeMode: 'contain' },
-  row: { flexDirection: 'row', alignItems: 'flex-start', marginBottom: 20 },
-  nurseRight: { width: 80, height: 120, resizeMode: 'contain', marginRight: 10 },
-  nurseLeft: { width: 80, height: 120, resizeMode: 'contain', marginRight: 10 },
-  bubble: {
-    flex: 1,
-    backgroundColor: '#e6f7f7',
-    borderRadius: 12,
-    padding: 10,
-    borderWidth: 1,
-    borderColor: '#5bb5b0',
+  scroll: { padding: 25 },
+  
+  header: { flexDirection: 'row', alignItems: 'center', marginBottom: 20 },
+  nurseTop: { width: 70, height: 80, resizeMode: 'contain', marginRight: 0 },
+  title: { fontSize: 19, fontWeight: 'bold' },
+
+  rowRight: { alignItems: 'flex-end', marginBottom: 15 },
+  nurseRight: { width: 360, height: 230, marginLeft: 10, resizeMode: 'contain' },
+  bubbleTextRight: {
+    position: 'absolute',
+    top: 22,
+    right: 150,
+    width: 185,
+    fontSize: 12,
+    textAlign: 'justify',
+    fontWeight: '600',
   },
-  bubbleText: { fontSize: 14, textAlign: 'justify' },
+
+  rowLeft: { alignItems: 'flex-start', marginBottom: 40 },
+  nurseLeft: { width: 340, height: 280, resizeMode: 'contain' },
+  bubbleTextLeft: {
+    position: 'absolute',
+    top: 50,
+    left: 130,
+    width: 170,
+    fontSize: 13,
+    textAlign: 'justify',
+    fontWeight: '600',
+  },
+
   footer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    padding: 15,
-    borderTopWidth: 1,
-    borderTopColor: '#ddd',
+    padding: 80,
   },
   button: {
     paddingVertical: 12,

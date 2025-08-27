@@ -90,7 +90,7 @@ export default function HubENF({ navigation }) {
         <View style={styles.menu}>
           <TouchableOpacity style={styles.botaoMenu} onPress={() => navigation.navigate('TelaSupervisaoENF')}>
             <Text style={styles.emoji}>📝</Text>
-            <Text style={styles.botaoTexto}>{t('avaliar_pe')}</Text>
+            <Text style={styles.botaoTexto}>{t('Avaliar Paciente')}</Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.botaoMenu} onPress={() => navigation.navigate('')}>
@@ -108,9 +108,9 @@ export default function HubENF({ navigation }) {
             <Text style={styles.botaoTexto}>{t('cartilha_autocuidado')}</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.botaoMenu} onPress={() => navigation.navigate('ConsultasAnterioresENF')}>
+          <TouchableOpacity style={styles.botaoMenu} onPress={() => navigation.navigate('Ulcera')}>
             <Text style={styles.emoji}>📋</Text>
-            <Text style={styles.botaoTexto}>{t('ulcera')}</Text>
+            <Text style={styles.botaoTexto}>{t('Informações sobre úlcera')}</Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.botaoMenu} onPress={() => navigation.navigate('')}>
@@ -147,6 +147,7 @@ export default function HubENF({ navigation }) {
     </SafeAreaView>
   );
 }
+
 
 const styles = StyleSheet.create({
   safeArea: {
@@ -255,4 +256,5 @@ const styles = StyleSheet.create({
   idiomaTexto: {
     fontSize: 16,
   },
+  
 });

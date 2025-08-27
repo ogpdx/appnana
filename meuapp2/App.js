@@ -48,6 +48,8 @@ import TelaEncerramentoTEC from './src/pages/TEC/TelaEncerramentoTEC';
 import HubENF from './src/pages/ENF/HubENF';
 import PerfilENF from './src/pages/ENF/PerfilENF';
 import SplashSucessoENF from './src/pages/SplashSucessoENF';
+import Ulcera from './src/pages/ENF/Ulcera';
+import SisUsar from './src/pages/ENF/SisUsar';
 
 
 Icon.loadFont();
@@ -115,6 +117,8 @@ export default function App() {
           <Stack.Screen name="SplashSucessoENF" component={SplashSucessoENF} />
           <Stack.Screen name="HubENF" component={HubENF} />
           <Stack.Screen name="PerfilENF" component={PerfilENF} />
+          <Stack.Screen name="Ulcera" component={Ulcera} />
+          <Stack.Screen name="SisUsar" component={SisUsar} />
           
          
         </Stack.Navigator>
