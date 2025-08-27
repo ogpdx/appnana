@@ -54,18 +54,19 @@ export default function LoginMedico({ navigation }) {
         body: `cpf=${cpfLimpo}&senha=${senha}&perfil=medico`,
       });
 
-      const json = await response.json();
-      if (json.status === 'ok') {
-        Alert.alert('Bem-vindo', `Olá, Dr ${json.nome}!`);
-        navigation.reset({ index: 0, routes: [{ name: 'SplashSucessoMED', params: { nome: json.nome } }] });
-      } else {
-        Alert.alert('Erro', json.mensagem || 'CPF ou senha inválidos.');
-      }
-    } catch (error) {
-      Alert.alert('Erro', 'Não foi possível conectar com o servidor.');
-      console.error(error);
-    }
-  };
+        const json = await response.json();
+            if (json.status === 'ok') {
+              Alert.alert('Bem-vindo', `Olá, Dr ${json.nome}!`);
+              navigation.reset({ index: 0, routes: [{ name: 'SplashSucessoMED', params: { nome: json.nome } }] });
+                    } else {
+                      Alert.alert(t('erro'), json.mensagem || t('cpf_senha_invalidos'));
+                    }
+                  } catch (e) {
+                    Alert.alert(t('erro'), t('erro_conexao'));
+                  } finally {
+                    setLoading(false);
+                  }
+                };
 
   return (
     <View style={{ flex: 1, backgroundColor: 'rgb(241, 241, 241)' }}>

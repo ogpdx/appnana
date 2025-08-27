@@ -46,7 +46,9 @@ import TelaHistoricoTEC from './src/pages/TEC/TelaHistoricoTEC';
 import TelaEncerramentoSimples from './src/pages/ACS/TelaEncerramentoSimples';
 import TelaEncerramentoTEC from './src/pages/TEC/TelaEncerramentoTEC';
 import HubENF from './src/pages/ENF/HubENF';
+import HubMED from './src/pages/MED/HubMED';
 import PerfilENF from './src/pages/ENF/PerfilENF';
+import SplashSucessoMED from './src/pages/SplashSucessoMED';
 import SplashSucessoENF from './src/pages/SplashSucessoENF';
 import Ulcera from './src/pages/ENF/Ulcera';
 import SisUsar from './src/pages/ENF/SisUsar';
@@ -115,7 +117,9 @@ export default function App() {
           <Stack.Screen name="TelaEncerramentoSimples" component={TelaEncerramentoSimples} />
           <Stack.Screen name="TelaEncerramentoTEC" component={TelaEncerramentoTEC} />
           <Stack.Screen name="SplashSucessoENF" component={SplashSucessoENF} />
+          <Stack.Screen name="SplashSucessoMED" component={SplashSucessoMED} />
           <Stack.Screen name="HubENF" component={HubENF} />
+          <Stack.Screen name="HubMED" component={HubMED} />
           <Stack.Screen name="PerfilENF" component={PerfilENF} />
           <Stack.Screen name="Ulcera" component={Ulcera} />
           <Stack.Screen name="SisUsar" component={SisUsar} />

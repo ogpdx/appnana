@@ -100,7 +100,7 @@ export default function HubENF({ navigation }) {
 
           <TouchableOpacity style={styles.botaoMenu} onPress={() => navigation.navigate('')}>
             <Text style={styles.emoji}>📚</Text>
-            <Text style={styles.botaoTexto}>{t('diretrizes_iwgdf')}</Text>
+            <Text style={styles.botaoTexto}>{t('Diretrizes IWGDF')}</Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.botaoMenu} onPress={() => navigation.navigate('')}>
@@ -115,7 +115,7 @@ export default function HubENF({ navigation }) {
 
           <TouchableOpacity style={styles.botaoMenu} onPress={() => navigation.navigate('')}>
             <Text style={styles.emoji}>🧮</Text>
-            <Text style={styles.botaoTexto}>{t('calcular_itb')}</Text>
+            <Text style={styles.botaoTexto}>{t('Calcular ITB')}</Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.botaoMenu} onPress={() => navigation.navigate('PerfilENF')}>
