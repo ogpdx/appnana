@@ -26,7 +26,7 @@ export default function AvaVascular({ navigation }) {
                 <Text style={styles.title}>Como realizar avaliação vascular em uma pessoa com diabetes e uma úlcera no pé?</Text>
                 </View>
 
-                <View style={styles.rowRight}>
+                <View style={styles.rowHeader}>
                 <Text style={styles.infotextvasc}>
                     1 - Verifique a palpação dos pulsos dos pés;{'\n'}
                     (Lembre-se a presença dos pulsos
@@ -49,11 +49,13 @@ export default function AvaVascular({ navigation }) {
                 </Text>
                 </View>
 
+                <View style={styles.rowRight}>
                 <Image source={require('../../img/esfdirt.jpg')} style={styles.nurseLeft} />
                 <Text style={styles.bubbleTextTwo}>
                     Se os valores estiverem anormais, mas não houver isquemia grave, verifique se
                     existe infecção ou úlcera profunda?
                 </Text>
+                </View>
             </ScrollView>
 
                  <View style={styles.footer}>
